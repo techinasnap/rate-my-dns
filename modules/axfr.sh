@@ -9,10 +9,13 @@ if [ -z "$ns" ]; then
 fi
 
 for server in $ns; do
-    # Only look at the ANSWER section; if it's non-empty, AXFR succeeded
+    # Only consider AXFR successful if the ANSWER section has multiple records
     answer=$(dig AXFR "$domain" @"$server" +noall +answer 2>/dev/null)
 
-    if [ -n "$answer" ]; then
+    # If the answer contains more than 1 line, AXFR succeeded
+    count=$(echo "$answer" | wc -l)
+
+    if [ "$count" -gt 1 ]; then
         echo "BRO|Zone transfer OPEN on $server"
         exit 0
     fi
