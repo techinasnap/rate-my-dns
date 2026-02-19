@@ -9,5 +9,8 @@ if [ -z "$ns" ]; then
     exit 0
 fi
 
-echo "OK|Found NS records: $ns"
+# Collapse newlines into spaces
+ns_one_line=$(echo "$ns" | tr '\n' ' ')
+
+echo "OK|Found NS records: $ns_one_line"
 exit 0
