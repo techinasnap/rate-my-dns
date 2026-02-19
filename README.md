@@ -1,18 +1,7 @@
-```text
-██████╗  █████╗ ████████╗███████╗    ███╗   ███╗██╗   ██╗
-██╔══██╗██╔══██╗╚══██╔══╝██╔════╝    ████╗ ████║██║   ██║
-██████╔╝███████║   ██║   █████╗      ██╔████╔██║██║   ██║
-██╔══██╗██╔══██║   ██║   ██╔══╝      ██║╚██╔╝██║██║   ██║
-██║  ██║██║  ██║   ██║   ███████╗    ██║ ╚═╝ ██║╚██████╔╝
-╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝    ╚═╝     ╚═╝ ╚═════╝ 
+<p align="center">
+  <img src="assets/img/banner.png" alt="Rate My DNS Banner" width="600">
+</p>
 
-██████╗  ███╗   ██╗███████╗
-██╔══██╗ ████╗  ██║██╔════╝
-██████╔╝ ██╔██╗ ██║█████╗  
-██╔══██╗ ██║╚██╗██║██╔══╝  
-██████╔╝ ██║ ╚████║███████╗
-╚═════╝  ╚═╝  ╚═══╝╚══════╝                                                
-```
 # Rate My DNS
 
 A modular, dependency‑free DNS auditing framework that evaluates DNSSEC, delegation, mail security, and zone health with Lynis‑style scoring. Designed for operators who prefer real diagnostics over web forms.
