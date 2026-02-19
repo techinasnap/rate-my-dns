@@ -8,18 +8,25 @@ if [ -z "$ns" ]; then
     exit 0
 fi
 
+open_ns=""
+
 for server in $ns; do
     # Only consider AXFR successful if the ANSWER section has multiple records
     answer=$(dig AXFR "$domain" @"$server" +noall +answer 2>/dev/null)
-
-    # If the answer contains more than 1 line, AXFR succeeded
     count=$(echo "$answer" | wc -l)
 
     if [ "$count" -gt 1 ]; then
-        echo "BRO|Zone transfer OPEN on $server"
-        exit 0
+        open_ns="$open_ns $server"
     fi
 done
+
+# Trim whitespace
+open_ns=$(echo "$open_ns" | xargs)
+
+if [ -n "$open_ns" ]; then
+    echo "BRO|Zone transfer OPEN on: $open_ns"
+    exit 0
+fi
 
 echo "OK|AXFR properly restricted"
 exit 0
