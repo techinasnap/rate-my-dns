@@ -4,15 +4,17 @@
 
 # Rate My DNS
 
-A modular, dependency‑free DNS auditing framework that evaluates DNSSEC, delegation, mail security, and zone health with Lynis‑style scoring. Designed for operators who prefer real diagnostics over web forms.
+A modular, dependency‑free DNS auditing framework for authoritative and recursive DNS servers. It evaluates DNSSEC, delegation, mail‑related records, and overall zone health using a Lynis‑style scoring model — built for operators who prefer real diagnostics over web forms.
 
-Rate My DNS consolidates checks normally scattered across tools like DNSViz, Hardenize, MXToolbox, Zonemaster, and various DANE/SPF/DMARC validators — but runs locally, fast, and without SaaS rate limits or 400MB of JavaScript.
+Rate My DNS consolidates checks normally scattered across tools like DNSViz, Hardenize, MXToolbox, Zonemaster, and various SPF/DKIM/DMARC validators — but runs locally, consistently, and without SaaS rate limits or heavyweight browser tooling.
 
 ---
 
 ## Why This Exists
 
 I needed a DNS auditor that aligns with how systems operators and architects actually work.
+
+Most tooling in this space focuses on DNS resolvers or whatever your router exposes. Rate My DNS is intentionally different: it audits DNS servers themselves — authoritative and recursive — where correctness, delegation, and security actually matter.
 
 With production responsibilities — and a homelab that serves as my proving ground — I move between jump hosts, Proxmox clusters, cloud VMs, and the occasional Raspberry Pi that happens to be closest to the problem. Modern DNS diagnostics are scattered across numerous web tools: MXToolbox, DNSViz, Hardenize, Zonemaster, and a long tail of SPF/DKIM/DMARC validators. None of them integrate cleanly into terminal workflows, automation pipelines, or SSH‑only environments.
 
