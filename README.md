@@ -10,6 +10,16 @@ Rate My DNS consolidates checks normally scattered across tools like DNSViz, Har
 
 ---
 
+## Why This Exists
+
+I needed a DNS auditor that aligns with how systems operators and architects actually work.
+
+With production responsibilities — and a homelab that serves as my proving ground — I move between jump hosts, Proxmox clusters, cloud VMs, and the occasional Raspberry Pi that happens to be closest to the problem. Modern DNS diagnostics are scattered across numerous web tools: MXToolbox, DNSViz, Hardenize, Zonemaster, and a long tail of SPF/DKIM/DMARC validators. None of them integrate cleanly into terminal workflows, automation pipelines, or SSH‑only environments.
+
+From an architectural perspective, I wanted something portable, predictable, and platform‑agnostic. A tool that behaves consistently across macOS, Linux, WSL, ephemeral cloud instances, or a rescue shell at 3 AM. No browser dependencies, no JavaScript payloads, no SaaS rate limits — just deterministic, local diagnostics.
+
+Rate My DNS is the tool I kept wishing existed: a single, operator‑grade DNS auditor that runs locally, speaks Bash, and provides clear, actionable signal without ceremony. It’s built for the people who have been up at 4 AM troubleshooting DNS in the dark, so others don’t have to be.
+
 ## Features
 
 - **DNSSEC validation**
@@ -106,7 +116,3 @@ Uninstall:
 ```
 sudo make uninstall
 ```
-
-## Why This Exists
-DNS tooling is fragmented across dozens of websites and scripts.
-Rate My DNS brings those checks together into a single, fast, local, operator‑grade auditor — built for people who troubleshoot DNS like it’s a craft.
