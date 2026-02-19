@@ -4,9 +4,9 @@
 
 # Rate My DNS
 
-A modular, dependency‑free DNS auditing framework for authoritative and recursive DNS servers. It evaluates DNSSEC, delegation, mail‑related records, and overall zone health using a Lynis‑style scoring model — built for operators who prefer real diagnostics over web forms.
+A modular, dependency‑free DNS auditing framework for authoritative and recursive DNS servers. It evaluates DNSSEC, delegation, mail‑related records, and zone health using a Lynis‑style scoring model — designed for operators who need deterministic, local diagnostics.
 
-Rate My DNS consolidates checks normally scattered across tools like DNSViz, Hardenize, MXToolbox, Zonemaster, and various SPF/DKIM/DMARC validators — but runs locally, consistently, and without SaaS rate limits or heavyweight browser tooling.
+Rate My DNS consolidates functionality normally spread across DNSViz, Hardenize, MXToolbox, Zonemaster, and various SPF/DKIM/DMARC validators, providing a single, consistent interface without SaaS dependencies or browser tooling.
 
 ---
 
