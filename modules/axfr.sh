@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 domain="$1"
 
-# Try AXFR against each NS
 ns=$(dig +short NS "$domain" 2>/dev/null)
 
 if [ -z "$ns" ]; then
@@ -10,8 +9,10 @@ if [ -z "$ns" ]; then
 fi
 
 for server in $ns; do
-    axfr=$(dig AXFR "$domain" @"$server" +short 2>/dev/null)
-    if [ -n "$axfr" ]; then
+    # Only look at the ANSWER section; if it's non-empty, AXFR succeeded
+    answer=$(dig AXFR "$domain" @"$server" +noall +answer 2>/dev/null)
+
+    if [ -n "$answer" ]; then
         echo "BRO|Zone transfer OPEN on $server"
         exit 0
     fi
