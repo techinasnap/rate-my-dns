@@ -71,13 +71,25 @@ rate-my-dns/
 
 ## Requirements
 
-- Bash
-- `kdig` (from Knot DNS utils)
-- `dig` (optional fallback)
+Rate My DNS currently uses dig for all DNS lookups, kdig support is planned for future releases.
+
+- `bash`
+- `dig`
 - `openssl`
 - `swaks` (optional for SMTP testing)
+- `kdig` (from Knot DNS utils)
 
 No npm. No Python virtualenvs. No Docker. No nonsense.
+
+---
+
+## Initial Setup
+
+```bash
+git clone https://github.com/techinasnap/rate-my-dns
+cd rate-my-dns
+chmod +x rate-my-dns.sh
+```
 
 ---
 
